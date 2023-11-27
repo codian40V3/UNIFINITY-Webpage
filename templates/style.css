@@ -1,21 +1,48 @@
 h1 {
     font-size: 40px;
-    text-align: center;
     display: inline-block
 }
-
 * {
     font-family: Helvetica, ui-sans-serif;
+    vertical-align: middle;
     text-align: center;
 }
-
 #Logo {
     text-align: left;
-    width: 300px;
+    width: 150px;
     object-fit: contain;
     display: inline-block
 }
-
 #Odesli {
     height: 1200px;
+    text-align: center;
+}
+#container{
+    max-width: 720px;
+    margin: 0 auto;
+}
+.fa {
+padding: 20px;
+font-size: 30px;
+width: 30px;
+text-align: center;
+text-decoration: none;
+margin: 5px 2px;
+border-radius: 50%;
+display: inline-block;
+}
+.fa:hover {
+    opacity: 0.3;
+}
+.fa-instagram {
+background: #000000;
+color: white;
+}
+.fa-spotify {
+background: #000000;
+color: white;
+}
+.fa-apple {
+    background: #000000;
+    color: white;
 }
