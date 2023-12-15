@@ -14,8 +14,8 @@ app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USE_TLS"] = False
 app.config["MAIL_USE_SSL"] = True
-app.config["MAIL_USERNAME"] = config["sender_mail_username"]
-app.config["MAIL_PASSWORD"] = config["sender_mail_password"]
+app.config["MAIL_USERNAME"] = config["unifinity_sender_mail_username"]
+app.config["MAIL_PASSWORD"] = config["unifinity_sender_mail_password"]
 
 
 mail = Mail(app)
@@ -33,8 +33,8 @@ def contact():
         subject = request.form.get("subject")
         message = request.form.get("message")
 
-        msg = Message(sender=config.get("sender_mail_username"),
-                      recipients=[config.get("recipient_mail_username")],
+        msg = Message(sender=config.get("unifinity_sender_mail_username"),
+                      recipients=[config.get("unifinity_recipient_mail_username")],
                       subject="UNIFINITY Contact Form submission",
                       body=f"Email: {email}\nSubject: {subject}\n\n{message}")
         mail.send(msg)
