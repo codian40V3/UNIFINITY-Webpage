@@ -4,7 +4,6 @@ from flask_mail import Mail, Message
 
 from dotenv import dotenv_values
 
-
 config = dotenv_values(".env")
 config_list = [config]
 
