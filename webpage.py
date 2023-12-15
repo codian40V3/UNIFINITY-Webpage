@@ -6,6 +6,7 @@ from dotenv import dotenv_values
 config = dotenv_values(".env")
 config_list = [config]
 
+
 app = Flask(__name__)
 
 app.config["MAIL_SERVER"] = "smtp-mail.outlook.com"
