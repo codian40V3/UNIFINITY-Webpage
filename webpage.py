@@ -23,7 +23,7 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/sent", methods=["GET", "POST"])
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
         email = request.form.get("email")
@@ -35,7 +35,7 @@ def contact():
                       subject="UNIFINITY Contact Form submission",
                       body=f"Email: {email}\nSubject: {subject}\n\n{message}")
         mail.send(msg)
-    return render_template("sent.html")
+    return render_template("contact.html")
 
 
 @app.route('/favicon.ico')
