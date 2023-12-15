@@ -16,9 +16,7 @@ app.config["MAIL_USE_SSL"] = True
 app.config["MAIL_USERNAME"] = config["unifinity_sender_mail_username"]
 app.config["MAIL_PASSWORD"] = config["unifinity_sender_mail_password"]
 
-
 mail = Mail(app)
-
 
 @app.route("/")
 def home():
