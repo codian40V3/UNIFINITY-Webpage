@@ -3,7 +3,6 @@ from flask import Flask, render_template, send_from_directory, request
 from flask_mail import Mail, Message
 from dotenv import dotenv_values
 
-
 config = dotenv_values(".env")
 config_list = [config]
 
@@ -13,10 +12,11 @@ app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USE_TLS"] = False
 app.config["MAIL_USE_SSL"] = True
-app.config["MAIL_USERNAME"] = config["unifinity_sender_mail_username"]
-app.config["MAIL_PASSWORD"] = config["unifinity_sender_mail_password"]
+app.config["MAIL_USERNAME"] = config["unifinity_sender_username"]
+app.config["MAIL_PASSWORD"] = config["unifinity_sender_password"]
 
 mail = Mail(app)
+
 
 @app.route("/")
 def home():
@@ -30,8 +30,8 @@ def contact():
         subject = request.form.get("subject")
         message = request.form.get("message")
 
-        msg = Message(sender=config.get("unifinity_sender_mail_username"),
-                      recipients=[config.get("unifinity_recipient_mail_username")],
+        msg = Message(sender=config.get("unifinity_sender_username"),
+                      recipients=[config.get("unifinity_recipient_username")],
                       subject="UNIFINITY Contact Form submission",
                       body=f"Email: {email}\nSubject: {subject}\n\n{message}")
         mail.send(msg)
