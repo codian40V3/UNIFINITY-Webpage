@@ -37,7 +37,7 @@ def contact():
                       subject="UNIFINITY Contact Form submission",
                       body=f"Email: {email}\nSubject: {subject}\n\n{message}")
         mail.send(msg)
-    return render_template("contact.html")
+    return render_template("sent.html")
 
 
 @app.route('/favicon.ico')
