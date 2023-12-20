@@ -8,7 +8,7 @@ config_list = [config]
 
 app = Flask(__name__)
 
-app.config["MAIL_SERVER"] = "smtp-relay.sendinblue.com"
+app.config["MAIL_SERVER"] = "smtppro.zoho.eu"
 app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
 app.config["MAIL_USE_SSL"] = False
