@@ -3,7 +3,7 @@ from flask import Flask, render_template, send_from_directory, request
 from flask_mail import Mail, Message
 from dotenv import dotenv_values
 
-config = dotenv_values(".env")
+config = dotenv_values("2.env")
 config_list = [config]
 
 app = Flask(__name__)
